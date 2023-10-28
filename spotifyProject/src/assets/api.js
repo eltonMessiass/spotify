@@ -8,7 +8,7 @@ const config = {
 }
 
 export async function worldCharts(){
-    
+
     // eslint-disable-next-line no-useless-catch
     try {
         const response = await axios.get('https://shazam-core7.p.rapidapi.com/charts/get-top-songs-in-world', config);
@@ -17,3 +17,20 @@ export async function worldCharts(){
         throw error;
     }
 }
+
+
+export async function shazamCoreApi(endpoint){
+
+    // eslint-disable-next-line no-useless-catch
+    try {
+        const response = await axios.get(`https://shazam-core7.p.rapidapi.com/${endpoint}`, config);
+        return response.data;
+    }catch (error) {
+        throw error;
+    }
+}
+
+
+export const {
+    useGetTopChartsQuery,
+  } = shazamCoreApi;
