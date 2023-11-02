@@ -12,6 +12,8 @@ const Discover = () => {
 
     const [isLoading, setIsLoading] = useState(true)
     const [worldChart, setWorldChart] = useState([]);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [activeSong, setActiveSong] = useState(true)
 
 
     useEffect(() => {
@@ -46,8 +48,8 @@ const Discover = () => {
                             <SongCard
                                 key={i}
                                 song={song}
-                                isPlaying={isPlaying}
-                                activeSong={activeSong}
+                                isPlaying={setIsPlaying(isPlaying)}
+                                activeSong={setActiveSong(activeSong)}
                                 data={worldChart} />
                         ))}
 

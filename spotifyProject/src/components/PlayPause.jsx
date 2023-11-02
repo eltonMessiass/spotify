@@ -2,6 +2,7 @@ import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa'
 
 
 
+// eslint-disable-next-line react/prop-types
 const PlayPause = ({ isPlaying, activeSong, song, handlePause, handlePlay }) => (isPlaying && activeSong?.title === song.title ? (
     <FaPauseCircle 
         size={35}
